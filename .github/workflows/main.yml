@@ -1,35 +1,40 @@
-name: Python CI
+# Название рабочего процесса
+name: PyCI
 
+# События, при которых будет запускаться рабочий процесс
 on:
-  - push
-  - pull_request
+  - push # Запуск при каждом push в репозиторий
 
+# Задачи, которые нужно выполнить
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build: # Имя задачи
+    runs-on: ubuntu-latest # Операционная система, на которой будет выполняться задача
     strategy:
       matrix:
-        # we want to test our package on several versions of Python
-        python-version: [3.8, 3.9]
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python ${{ matrix.python-version }}
+        python-version: [3.11, 3.12] # Версии Python для тестирования
+
+    steps: # Шаги для выполнения в задаче
+      - uses: actions/checkout@v3 # Шаг для проверки репозитория
+
+      # Шаг для установки Python с использованием версии из матрицы стратегии
+      - name: setup-python
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
-        # make depends on poetry
-      - name: Install dependencies
-        run: |
-          pip install poetry
-          make install
-      - name: Run linter and pytest
-        run: |
-          make check
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v5.0.0
-        if: github.ref_name == 'main'
+          python-version: ${{matrix.python-version}}
+
+      # Шаг для установки зависимостей через pip и make
+      - name: install-dependencies
+        run: pip install poetry && make install
+
+      # Шаг для проверки кода линтером
+      - name: check linter
+        run: make lint
+
+      # Шаг для проверки покрытия кода тестами и отправки отчета в CodeClimate
+      - name: checking coverage
+        uses: paambaati/codeclimate-action@v3.2.0
         env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}} # Использование секрета для идентификатора отчета
         with:
-          coverageCommand: make test-coverage
-          debug: true
+          coverageCommand: make coverage # Команда для генерации отчета о покрытии
+          debug: true # Включение режима отладки
