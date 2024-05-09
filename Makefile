@@ -15,3 +15,10 @@ package-install:
 
 lint:
 	poetry run flake8 gendif
+
+run_linter_and_pytest:
+	make check
+
+coverageCommand:
+	make test-coverage
+
