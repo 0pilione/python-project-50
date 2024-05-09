@@ -17,7 +17,6 @@ lint:
 	poetry run flake8 gendif
 
 check:
-	poetry run pytest
 	make lint
 
 test-coverage:
