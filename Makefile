@@ -18,6 +18,7 @@ lint:
 
 check:
 	make lint
+	pytest test_test.py
 
 test-coverage:
 	poetry run pytest
