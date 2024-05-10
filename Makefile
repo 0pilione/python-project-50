@@ -21,7 +21,7 @@ pytest:
 	poetry run pytest
 
 check:
-	pytest --cov=gendif --cov-report xml tests/
+	pytest
 
 test-coverage:
 	poetry run pytest
