@@ -17,8 +17,8 @@ lint:
 	poetry run flake8 gendif
 
 pytest:
-	pip install pytest
-	poetry run pytest
+	pip install pytest pytest-cov
+	pytest test_test.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
 
 check:
 	pytest
