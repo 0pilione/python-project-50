@@ -16,8 +16,11 @@ package-install:
 lint:
 	poetry run flake8 gendif
 
+pytest:
+	poetry run pytest
+
 check:
-	poetry run pytest --cov=gendif --cov-report xml tests/
+	pytest --cov=gendif --cov-report xml tests/
 
 test-coverage:
 	poetry run pytest
