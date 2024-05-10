@@ -17,8 +17,8 @@ lint:
 	poetry run flake8 gendif
 
 check:
-	make lint
 	poetry run pytest --cov=gendif --cov-report xml tests/
+
 test-coverage:
 	poetry run pytest
 
