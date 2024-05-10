@@ -17,6 +17,7 @@ lint:
 	poetry run flake8 gendif
 
 pytest:
+	pip install pytest
 	poetry run pytest
 
 check:
