@@ -5,7 +5,7 @@ from tests.fixtures.test_2 import path1
 
 def test1():
     res = generate_diff(path(), path1())
-    b = open('/home/kotyabrina/python-project-50/tests/ress.txt')
+    b = open('tests/ress.txt')
     for lines in b:
         j = []
         if lines in b:
