@@ -20,7 +20,5 @@ check:
 	pip install pytest pytest-cov
 	pytest tests/test_test.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
 
-
 test-coverage:
-	poetry run pytest
-
+	pytest --cov=gendif
