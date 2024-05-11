@@ -21,4 +21,4 @@ check:
 	pytest tests/test_test.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
 
 test-coverage:
-	pytest --cov=gendif
+	poetry run pytest --cov=gendif --cov-report xml
