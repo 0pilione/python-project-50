@@ -16,7 +16,6 @@ n = args.second_file
 g = dict(json.load(open(m)))
 d = dict(json.load(open(n)))
 
-
 def main():
    return  generate_diff(g, d)
 
