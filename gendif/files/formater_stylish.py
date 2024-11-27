@@ -1,27 +1,35 @@
 def stylish(diff, level=0):
-    result = '{\n'
+    r = []
+    r.append(f'{"{"}')
     for n in diff:
         if n['status'] == 'added':
-            result += f'{"    " * level + " + "}{n["key"]}: {n["value"]}\n'
-         
+           r.append(f'{"    " * level + "+ "}{n["key"]}: {stylish_2(n["value"], level)}')
         if n['status'] == 'unupdated':
-            
-            result += f'   {"    " * level}{n["key"]}: {n["value"]}\n'
+            r.append(f'{"    " * level}{n["key"]}: {stylish_2(n["value"], level)}')
         if n['status'] == 'deleted':
-           
-            result += f'{"    " * level + " - "}{n["key"]}: {n["value"]}\n'
+            r.append(f'{"    " * level + "- "}{n["key"]}: {stylish_2(n["value"], level)}')
         if n['status'] == 'changed':
-            
-           
-            result += f'''{"    " * level + " - "}{n["key"]}: {n["old_value"]}\n
-            {"    " * level + " + "}{n["key"]}: {n["new_value"]}\n'''
+            r.append(f'{"    " * level + "- "}{n["key"]}: {stylish_2(n["old_value"], level)}')
+            r.append(f'{"    " * level + "+ "}{n["key"]}: {stylish_2(n["new_value"], level)}')
         if n['status'] == 'nested':
-            
-            result += f'   {"    " * level}{n["key"]}: {"{"}\n'
+            r.append(f'{"    " * level}{n["key"]}:')
             level += 1
-            stylish(n['value'], level)
-            
-            result += f'{"    " * level}{"}"}\n'
+            r.append(f'{"    " * level}{stylish(v, level)}')
             level -= 1
-    result += '\n}'
-    return result
+
+    r.append(f'{"    " * level}{"}"}')
+    b = '\n'.join(r)
+    return b
+
+def stylish_2(node, level):
+    if type(node) == list:
+        level += 1
+        m = stylish(node, level)
+        level -= 1
+        return m
+    if type(node) == dict:
+        level +=1
+        for key, value in node.items():
+            return f'{"{"}\n    {"    " * level}{key}: {value}\n{"    " * level}{"}"}'
+    else:
+        return node
