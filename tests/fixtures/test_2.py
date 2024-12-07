@@ -1,5 +1,6 @@
-import pytest
 import json
+
+import pytest
 
 
 def path1():

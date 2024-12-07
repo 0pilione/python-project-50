@@ -1,8 +1,12 @@
-import pytest
 import json
+from pathlib import Path
+
+import pytest
+
 
 def path():
-    m = dict(json.load(open('gendif/files/file1.json')))
-    return m
+    file = Path('gendif/files/file1.json')
+    n = dict(json.load(open(file)))
+    return n
 
 
