@@ -1,5 +1,5 @@
 from gendiff.formatters.__init__ import diff_formaters
-from gendiff.scripts.base_diff import diff
+from gendiff.base_diff import diff
 
 
 def generate_diff(dict1, dict2, format_name='stylish'):
