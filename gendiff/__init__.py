@@ -1,3 +1,3 @@
-from gendiff.scripts import __init__
+from gendiff.scripts.twofiles import generate_diff
 
-__all__ = ['gendiff']
+__all__ = ('twofiles')
