@@ -1,7 +1,7 @@
 install:
 	poetry install
 
-gendif:
+gendiff:
 	poetry run diff
 
 build:
@@ -14,7 +14,7 @@ package-install:
 	python3 -m pip install --user dist/*.whl
 
 lint:
-	poetry run flake8 gendif
+	poetry run flake8 gendiff
 
 check:
 	make lint
@@ -22,4 +22,4 @@ check:
 	pytest tests/test_test.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
 
 test-coverage:
-	poetry run pytest --cov=gendif --cov-report xml
+	poetry run pytest --cov=gendiff --cov-report xml
