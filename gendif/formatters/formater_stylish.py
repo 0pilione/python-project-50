@@ -22,7 +22,7 @@ def stylish(diff, level=0):
     
 
 def stylish_2(node, level):
-    r = []
+    result = ''
     if type(node) == list:
         level += 1
         m = stylish(node, level)
@@ -31,6 +31,8 @@ def stylish_2(node, level):
     if type(node) == dict:
         level +=1
         for key, value in node.items():
-            return f'{"{"}\n    {"    " * level}{key}: {value}\n{"    " * level}{"}"}'
+            n = stylish_2(value, level)
+            result += f'\n    {"    " * level}{key}: {n}'
+        return '{' + result + '\n' + '    ' * level + '}'
     else:
         return node
