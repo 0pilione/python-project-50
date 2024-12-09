@@ -5,7 +5,7 @@ description = ""
 authors = ["Татьяна <deepredoctober@gmail.com>"]
 readme = "README.md"
 packages = [
-  { include = "gendif" },
+  { include = "gendiff" },
 ]
 
 [tool.poetry.dependencies]
@@ -21,4 +21,4 @@ build-backend = "poetry.core.masonry.api"
 
 
 [tool.poetry.scripts]
-gendiff  = "gendif.scripts.gendiff:main"
+gendiff  = "gendiff.scripts.gendiff:main"
