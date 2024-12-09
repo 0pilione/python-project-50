@@ -21,4 +21,4 @@ build-backend = "poetry.core.masonry.api"
 
 
 [tool.poetry.scripts]
-diff  = "gendif.scripts.gendiff:main"
+gendiff  = "gendif.scripts.gendiff:main"
