@@ -1,8 +1,9 @@
 import argparse
 import json
-
+from gendiff.formatters.__init__ import diff_formaters
+from gendiff.scripts.base_diff import diff
 import yaml
-from gendiff.scripts.twofiles import generate_diff
+#from gendiff.scripts.twofiles import generate_diff
 
 parser = argparse.ArgumentParser(description='Compares two configuration files and shows a difference.')
    
@@ -15,6 +16,10 @@ args = parser.parse_args()
 first = args.first_file
 second = args.second_file
 formater = args.format
+
+def generate_diff(dict1, dict2, format_name='stylish'):
+    dif = diff(dict1, dict2)
+    return diff_formaters(dif, format_name)
 
 def main(): 
    if first.endswith('json') and second.endswith('json'):
