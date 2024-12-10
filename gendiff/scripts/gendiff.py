@@ -17,10 +17,8 @@ second = args.second_file
 formater = args.format
 
 
-
-
 def main(): 
-      return generate_diff(parserr(first), parserr(second), formater)
+      return generate_diff(first, second, formater)
 
 
 if __name__ == '__main__':

@@ -11,8 +11,8 @@ def parserr(path):
         _, split_path = os.path.splitext(path)
         split_path = split_path.lower()
         if split_path in ['.yaml', '.yml']:
-            return dict(yaml.safe_load(read_file))
+            return yaml.safe_load(read_file)
         elif split_path == '.json':
-            return dict(json.loads(read_file))
+            return json.loads(read_file)
         else:
             return 'uncorrect type of files'
