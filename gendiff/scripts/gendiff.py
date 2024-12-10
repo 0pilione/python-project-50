@@ -1,6 +1,5 @@
 import argparse
 import json
-import yaml
 from gendiff import generate_diff
 from gendiff.parse import parserr
 
