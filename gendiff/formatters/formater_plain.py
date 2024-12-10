@@ -1,17 +1,16 @@
 def plain(diff, path=''):
-    r = []
+    r = ''
     for n in diff:
         name = f'{path}{n["key"]}.'
         if n['status'] == 'added':
-           r.append(f"\nProperty '{name[:-1]}' was added with value: {plain_2(n['value'])}")
+           r += f"\nProperty '{name[:-1]}' was added with value: {plain_2(n['value'])}"
         elif n['status'] == 'deleted':
-           r.append(f"\nProperty '{name[:-1]}' was removed")
+           r += f"\nProperty '{name[:-1]}' was removed"
         elif n['status'] == 'changed':
-           r.append(f"\nProperty '{name[:-1]}' was updated. From {plain_2(n['old_value'])} to {plain_2(n['new_value'])}")
+           r += f"\nProperty '{name[:-1]}' was updated. From {plain_2(n['old_value'])} to {plain_2(n['new_value'])}"
         elif n['status'] == 'nested':
-           r.append(f'{plain(n["value"], path=name)}')
-    b = ''.join(r)
-    return b
+           r += f'{plain(n["value"], path=name)}'
+    return r
 
 
 
