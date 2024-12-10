@@ -13,7 +13,7 @@ formater = args.format
 
 
 def main():   
-      return generate_diff(first, second, formater)
+      print(generate_diff(first, second, formater))
 
 
 if __name__ == '__main__':
