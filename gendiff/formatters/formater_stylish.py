@@ -13,12 +13,12 @@ def stylish(diff, level=0):
             r += f'\n{"    " * level + "  + "}{n["key"]}: {stylish_2(n["new_value"], level)}'
         if n['status'] == 'nested':
             level += 1
-            r += f'\n{"    " * level}{n["key"]}:'
+            r += f'\n{"    " * level}{n["key"]}: '
             r += f'{stylish(n["value"], level)}'
             level -= 1
     r += f'\n{"    " * level}{"}"}'
     level -= 1
-    return ' {' + r
+    return '{' + r
     
 
 def stylish_2(node, level):
