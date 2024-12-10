@@ -10,14 +10,13 @@ def plain(diff, path=''):
            r.append(f"\nProperty '{name[:-1]}' was updated. From {plain_2(n['old_value'])} to {plain_2(n['new_value'])}")
         elif n['status'] == 'nested':
            r.append(f'{plain(n["value"], path=name)}')
-    b = ' '.join(r)
+    b = ''.join(r)
     return b
 
 
 
 
 def plain_2(node):
-    r = []
     if type(node) == list:
         return f'[complex value]'
     else:
