@@ -8,5 +8,5 @@ def diff_formaters(diff, format_name):
         return stylish(diff)
     elif format_name == 'plain':
         return plain(diff)
-    elif format_name == 'formater_json':
+    elif format_name == 'json':
         return formater_json(diff)
