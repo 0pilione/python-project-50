@@ -5,7 +5,7 @@ def stylish(diff, level=0):
         if n['status'] == 'added':
            r.append(f'\n{"    " * level + "  + "}{n["key"]}: {stylish_2(n["value"], level)}')
         if n['status'] == 'unupdated':
-            r.append(f'\n{"    " * level + "   "}{n["key"]}: {stylish_2(n["value"], level)}')
+            r.append(f'\n{"    " * level + "    "}{n["key"]}: {stylish_2(n["value"], level)}')
         if n['status'] == 'deleted':
             r.append(f'\n{"    " * level + "  - "}{n["key"]}: {stylish_2(n["value"], level)}')
         if n['status'] == 'changed':
