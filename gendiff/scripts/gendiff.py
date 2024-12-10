@@ -2,6 +2,7 @@ import argparse
 import json
 import yaml
 from gendiff import generate_diff
+from gendiff.parse import parserr
 
 parser = argparse.ArgumentParser(description='Compares two configuration files and shows a difference.')
    
@@ -16,17 +17,10 @@ second = args.second_file
 formater = args.format
 
 
+
+
 def main(): 
-   if first.endswith('json') and second.endswith('json'):
-      opened_first = dict(json.load(open(first)))
-      opened_second = dict(json.load(open(second)))
-      return  generate_diff(opened_first, opened_second, formater)
-   if first.endswith('yml') and second.endswith('yml'):
-      opened_first_2 = dict(yaml.safe_load(open(first)))
-      opened_second_2 = dict(yaml.safe_load(open(second)))
-      return  generate_diff(opened_first_2, opened_second_2, formater)
-   else:
-      return 'uncorrect type of files'
+      return generate_diff(parserr(first), parserr(second), formater)
 
 
 if __name__ == '__main__':
