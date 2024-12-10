@@ -18,7 +18,7 @@ def stylish(diff, level=0):
             level -= 1
     r += f'\n{"    " * level}{"}"}'
     level -= 1
-    return '{' + r
+    return ' {' + r
     
 
 def stylish_2(node, level):
