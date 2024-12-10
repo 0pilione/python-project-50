@@ -2,4 +2,5 @@ import json
 
 
 def formater_json(diff):
-    return json.dumps(diff, indent=4)
+    for n in diff:
+        return json.dumps(n, indent=4)
