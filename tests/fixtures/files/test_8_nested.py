@@ -5,10 +5,9 @@ import yaml
 
 
 def path2():
-    file = Path('tests/fixtures/nested_file2.yml')
-    m = dict(yaml.safe_load(open(file)))
-    return m
+    file = 'tests/fixtures/nested_file2.yml'
+    return file
 
 def faled_path_1():
-    file = Path('tests/fixtures/nested_file2.jpg')
+    file = 'tests/fixtures/nested_file2.jpg'
     return file
