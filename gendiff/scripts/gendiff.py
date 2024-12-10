@@ -3,21 +3,16 @@ import json
 import yaml
 from gendiff import generate_diff
 from gendiff.parse import parserr
+from gendiff.parse_1 import parsearguments
 
-parser = argparse.ArgumentParser(description='Compares two configuration files and shows a difference.')
-   
-first = parser.add_argument('first_file')
-second = parser.add_argument('second_file')
-formater = parser.add_argument('--format', '-f', help='set format of output', default="stylish")
-
-args = parser.parse_args()
+args = parsearguments()
 
 first = args.first_file
 second = args.second_file
 formater = args.format
 
 
-def main(): 
+def main():   
       return generate_diff(first, second, formater)
 
 
