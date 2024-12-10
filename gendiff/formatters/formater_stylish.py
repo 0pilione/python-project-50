@@ -1,3 +1,4 @@
+
 def stylish(diff, level=0):
     r = []
     for n in diff:
@@ -34,5 +35,10 @@ def stylish_2(node, level):
             n = stylish_2(value, level)
             result += f'\n    {"    " * level}{key}: {n}'
         return '{' + result + '\n' + '    ' * level + '}'
-    else:
+    if isinstance(node, bool):
+        return str(node).lower()
+    if node is None:
+        node = 'null'
         return node
+    else:
+        return str(node)
