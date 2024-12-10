@@ -17,7 +17,7 @@ def stylish(diff, level=0):
             r.append(f'{stylish(n["value"], level)}')
             level -= 1
     r.append(f'\n{"    " * level}{"}"}')
-    b = ' '.join(r)
+    b = ''.join(r)
     level -= 1
     return '{' + b
     
