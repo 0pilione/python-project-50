@@ -33,7 +33,7 @@ def stylish_2(node, level):
         level +=1
         for key, value in node.items():
             n = stylish_2(value, level)
-            result += f'\n    {"    " * level}{key}: {n}'
+            result += f'\n    {"    " * level}{key}:{n}'
         return '{' + result + '\n' + '    ' * level + '}'
     if isinstance(node, bool):
         return str(node).lower()
