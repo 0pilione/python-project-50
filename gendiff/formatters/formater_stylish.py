@@ -28,7 +28,7 @@ def stylish_2(node, level):
         level += 1
         m = stylish(node, level)
         level -= 1
-        return  m
+        return  str(m)
     if type(node) == dict:
         level +=1
         for key, value in node.items():
