@@ -21,7 +21,7 @@ def diff(d1, d2):
                 result.append({'key': key,
                                'status': 'changed',
                                'old_value': d1[key],
-                               'new_value': d2[key])})
+                               'new_value': d2[key]})
         elif key in keys2:
             result.append({'key': key,
                            'value': d2[key],
