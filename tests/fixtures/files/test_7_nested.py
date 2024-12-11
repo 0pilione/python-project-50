@@ -1,7 +1,5 @@
 from pathlib import Path
 
-import yaml
-
 
 def path():
     file = Path('tests/fixtures/nested_file1.yml')

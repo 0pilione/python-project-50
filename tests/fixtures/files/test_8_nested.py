@@ -1,6 +1,3 @@
-import yaml
-
-
 def path2():
     file = 'tests/fixtures/nested_file2.yml'
     return file
