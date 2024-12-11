@@ -17,7 +17,6 @@ lint:
 	poetry run flake8 gendiff
 
 check:
-	poetry install pytest pytest-cov
 	make lint
 
 test-coverage:
