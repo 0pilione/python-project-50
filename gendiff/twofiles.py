@@ -1,5 +1,5 @@
-from gendiff.formatters.__init__ import diff_formaters
 from gendiff.base_diff import diff
+from gendiff.formatters.__init__ import diff_formaters
 from gendiff.parse import parserr
 
 
