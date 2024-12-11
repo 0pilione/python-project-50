@@ -1,38 +1,43 @@
 
 def stylish(diff, level=0):
-    r = ''
+    result = ''
     for n in diff:
         if n['status'] == 'added':
-           r += f'\n{"    " * level + "  + "}{n["key"]}: {stylish_2(n["value"], level)}'
+            result += f'\n{"    " * level + "  + "}{n["key"]}: '
+            result += f'{stylish_2(n["value"], level)}'
         if n['status'] == 'unupdated':
-            r += f'\n{"    " * level + "    "}{n["key"]}: {stylish_2(n["value"], level)}'
+            result += f'\n{"    " * level + "    "}{n["key"]}: '
+            result += f'{stylish_2(n["value"], level)}'
         if n['status'] == 'deleted':
-            r += f'\n{"    " * level + "  - "}{n["key"]}: {stylish_2(n["value"], level)}'
+            result += f'\n{"    " * level + "  - "}{n["key"]}: '
+            result += f'{stylish_2(n["value"], level)}'
         if n['status'] == 'changed':
-            r += f'\n{"    " * level + "  - "}{n["key"]}: {stylish_2(n["old_value"], level)}'
-            r += f'\n{"    " * level + "  + "}{n["key"]}: {stylish_2(n["new_value"], level)}'
+            result += f'\n{"    " * level + "  - "}{n["key"]}: '
+            result += f'{stylish_2(n["old_value"], level)}'
+            result += f'\n{"    " * level + "  + "}{n["key"]}: '
+            result += f'{stylish_2(n["new_value"], level)}'
         if n['status'] == 'nested':
             level += 1
-            r += f'\n{"    " * level}{n["key"]}: '
-            r += f'{stylish(n["value"], level)}'
+            result += f'\n{"    " * level}{n["key"]}: '
+            result += f'{stylish(n["value"], level)}'
             level -= 1
-    r += f'\n{"    " * level}{"}"}'
+    result += f'\n{"    " * level}{"}"}'
     level -= 1
-    return '{' + r
+    return '{' + result
     
 
 def stylish_2(node, level):
     result = ''
-    if type(node) == list:
+    if isinstance(node, list):
         level += 1
-        m = stylish(node, level)
+        new_node = stylish(node, level)
         level -= 1
-        return  str(m)
-    if type(node) == dict:
-        level +=1
+        return str(new_node)
+    if isinstance(node, dict):
+        level += 1
         for key, value in node.items():
-            n = stylish_2(value, level)
-            result += f'\n    {"    " * level}{key}: {n}'
+            new_value = stylish_2(value, level)
+            result += f'\n    {"    " * level}{key}: {new_value}'
         return '{' + result + '\n' + '    ' * level + '}'
     if isinstance(node, bool):
         return str(node).lower()
@@ -40,4 +45,4 @@ def stylish_2(node, level):
         node = 'null'
         return node
     else:
-        return str(node)
+        return node

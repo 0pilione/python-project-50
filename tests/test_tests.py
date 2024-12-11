@@ -1,6 +1,6 @@
 from gendiff import generate_diff
-from tests.fixtures.files.test_7_nested import faled_path, path
-from tests.fixtures.files.test_8_nested import faled_path_1, path2
+from tests.fixtures.files.test_7_nested import path
+from tests.fixtures.files.test_8_nested import path2
 
 
 def test1():

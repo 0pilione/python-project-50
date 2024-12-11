@@ -1,12 +1,10 @@
 import json
-
 import yaml
-
 import os
 
 
 def parserr(path):
-   with open(path) as file:
+    with open(path) as file:
         read_file = file.read()
         _, split_path = os.path.splitext(path)
         split_path = split_path.lower()

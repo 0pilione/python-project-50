@@ -1,19 +1,15 @@
-import argparse
-import json
-import yaml
 from gendiff import generate_diff
-from gendiff.parse import parserr
 from gendiff.parse_1 import parsearguments
 
-args = parsearguments()
 
+args = parsearguments()
 first = args.first_file
 second = args.second_file
 formater = args.format
 
 
 def main():   
-      print(generate_diff(first, second, formater))
+    print(generate_diff(first, second, formater))
 
 
 if __name__ == '__main__':
