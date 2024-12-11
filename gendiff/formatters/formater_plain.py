@@ -15,7 +15,7 @@ def plain(diff, path=''):
 
 
 def plain_2(node):
-    elif isinstance(node, str):
+    if isinstance(node, str):
         return f"'{node}'"
     elif isinstance(node, dict) or isinstance(node, list):
         return "[complex value]"
