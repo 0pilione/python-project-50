@@ -1,5 +1,4 @@
 from gendiff import generate_diff
-
 from tests.fixtures.files.test_7_nested import path
 from tests.fixtures.files.test_8_nested import path2
 
