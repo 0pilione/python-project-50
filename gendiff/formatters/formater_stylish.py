@@ -16,7 +16,7 @@ def stylish(diff, level=0):
             result += f'{stylish_2(n["old_value"], level)}'
             result += f'\n{"    " * level + "  + "}{n["key"]}: '
             result += f'{stylish_2(n["new_value"], level)}'
-        elif n['status'] == 'nested':
+        else:
             level += 1
             result += f'\n{"    " * level}{n["key"]}: '
             result += f'{stylish(n["value"], level)}'
