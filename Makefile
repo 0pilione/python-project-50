@@ -18,8 +18,7 @@ lint:
 
 check:
 	make lint
-	pip install pytest pytest-cov
-	pytest --cov=com --cov-report=xml
+	poetry run pytest
 
 test-coverage:
 	poetry run pytest --cov=gendiff --cov-report xml
