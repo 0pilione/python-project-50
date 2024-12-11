@@ -17,6 +17,7 @@ lint:
 	poetry run flake8 gendiff
 
 check:
+	pip install pytest pytest-cov
 	make lint
 	poetry run pytest
 
