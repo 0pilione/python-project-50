@@ -15,13 +15,13 @@ def plain(diff, path=''):
 
 
 def plain_2(node):
-    if isinstance(node, list):
-        return '[complex value]'
-    elif isinstance(node, dict):
+    elif isinstance(node, str):
+        return f"'{node}'"
+    elif isinstance(node, dict) or isinstance(node, list):
         return "[complex value]"
     elif isinstance(node, bool):
         return str(node).lower()
     elif node is None:
         return 'null'
     else:
-        return str(node)
+        return node
