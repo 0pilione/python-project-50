@@ -19,7 +19,7 @@ lint:
 check:
 	make lint
 	pip install pytest pytest-cov
-	pytest tests/test_test.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+	pytest --cov=com --cov-report=xml
 
 test-coverage:
 	poetry run pytest --cov=gendiff --cov-report xml
