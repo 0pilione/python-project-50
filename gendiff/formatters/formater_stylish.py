@@ -5,18 +5,18 @@ def stylish(diff, level=0):
         if n['status'] == 'added':
             result += f'\n{"    " * level + "  + "}{n["key"]}: '
             result += f'{stylish_2(n["value"], level)}'
-        if n['status'] == 'unupdated':
+        elif n['status'] == 'unupdated':
             result += f'\n{"    " * level + "    "}{n["key"]}: '
             result += f'{stylish_2(n["value"], level)}'
-        if n['status'] == 'deleted':
+        elif n['status'] == 'deleted':
             result += f'\n{"    " * level + "  - "}{n["key"]}: '
             result += f'{stylish_2(n["value"], level)}'
-        if n['status'] == 'changed':
+        elif n['status'] == 'changed':
             result += f'\n{"    " * level + "  - "}{n["key"]}: '
             result += f'{stylish_2(n["old_value"], level)}'
             result += f'\n{"    " * level + "  + "}{n["key"]}: '
             result += f'{stylish_2(n["new_value"], level)}'
-        if n['status'] == 'nested':
+        elif n['status'] == 'nested':
             level += 1
             result += f'\n{"    " * level}{n["key"]}: '
             result += f'{stylish(n["value"], level)}'
@@ -24,7 +24,7 @@ def stylish(diff, level=0):
     result += f'\n{"    " * level}{"}"}'
     level -= 1
     return '{' + result
-    
+
 
 def stylish_2(node, level):
     result = ''
