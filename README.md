@@ -1,8 +1,8 @@
 1. [![asciicast](https://asciinema.org/a/a14oJSXYNx02c6RnJfTH7NHo5.svg)](https://asciinema.org/a/a14oJSXYNx02c6RnJfTH7NHo5)
-2. https://asciinema.org/a/RrxTHyaqYijY9l7DAvUASFjfP
-3. https://asciinema.org/a/LloGECisaUPI6bjU0IzNFzb44
-4. https://asciinema.org/a/40YcX1JrXFfKn1chNCogLtmlo
-5. https://asciinema.org/a/vFIFyFzJwxnFHcEiEBrCNknQc
+2. [![asciicast](https://asciinema.org/a/RrxTHyaqYijY9l7DAvUASFjfP.svg)](https://asciinema.org/a/RrxTHyaqYijY9l7DAvUASFjfP)
+3. [![asciicast](https://asciinema.org/a/LloGECisaUPI6bjU0IzNFzb44.svg)](https://asciinema.org/a/LloGECisaUPI6bjU0IzNFzb44)
+4. [![asciicast](https://asciinema.org/a/40YcX1JrXFfKn1chNCogLtmlo.svg)](https://asciinema.org/a/40YcX1JrXFfKn1chNCogLtmlo)
+5. [![asciicast](https://asciinema.org/a/vFIFyFzJwxnFHcEiEBrCNknQc.svg)](https://asciinema.org/a/vFIFyFzJwxnFHcEiEBrCNknQc)
 [![Maintainability](https://api.codeclimate.com/v1/badges/c113b0274a8a7ecb3483/maintainability)](https://codeclimate.com/github/0pilione/python-project-50/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/c113b0274a8a7ecb3483/test_coverage)](https://codeclimate.com/github/0pilione/python-project-50/test_coverage)
 [![Python CI](https://github.com/0pilione/python-project-50/actions/workflows/pyci.yml/badge.svg)](https://github.com/0pilione/python-project-50/actions/workflows/pyci.yml)
