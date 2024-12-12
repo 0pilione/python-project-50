@@ -1,4 +1,4 @@
-1. https://asciinema.org/a/a14oJSXYNx02c6RnJfTH7NHo5
+1. [![asciicast](https://asciinema.org/a/a14oJSXYNx02c6RnJfTH7NHo5.svg)](https://asciinema.org/a/a14oJSXYNx02c6RnJfTH7NHo5)
 2. https://asciinema.org/a/RrxTHyaqYijY9l7DAvUASFjfP
 3. https://asciinema.org/a/LloGECisaUPI6bjU0IzNFzb44
 4. https://asciinema.org/a/40YcX1JrXFfKn1chNCogLtmlo

@@ -1,25 +1,25 @@
 
 def stylish(diff, level=0):
     result = ''
-    for n in diff:
-        if n['status'] == 'added':
-            result += f'\n{"    " * level + "  + "}{n["key"]}: '
-            result += f'{stylish_2(n["value"], level)}'
-        elif n['status'] == 'unupdated':
-            result += f'\n{"    " * level + "    "}{n["key"]}: '
-            result += f'{stylish_2(n["value"], level)}'
-        elif n['status'] == 'deleted':
-            result += f'\n{"    " * level + "  - "}{n["key"]}: '
-            result += f'{stylish_2(n["value"], level)}'
-        elif n['status'] == 'changed':
-            result += f'\n{"    " * level + "  - "}{n["key"]}: '
-            result += f'{stylish_2(n["old_value"], level)}'
-            result += f'\n{"    " * level + "  + "}{n["key"]}: '
-            result += f'{stylish_2(n["new_value"], level)}'
+    for node in diff:
+        if node['status'] == 'added':
+            result += f'\n{"    " * level + "  + "}{node["key"]}: '
+            result += f'{stylish_2(node["value"], level)}'
+        elif node['status'] == 'unupdated':
+            result += f'\n{"    " * level + "    "}{node["key"]}: '
+            result += f'{stylish_2(node["value"], level)}'
+        elif node['status'] == 'deleted':
+            result += f'\n{"    " * level + "  - "}{node["key"]}: '
+            result += f'{stylish_2(node["value"], level)}'
+        elif node['status'] == 'changed':
+            result += f'\n{"    " * level + "  - "}{node["key"]}: '
+            result += f'{stylish_2(node["old_value"], level)}'
+            result += f'\n{"    " * level + "  + "}{node["key"]}: '
+            result += f'{stylish_2(node["new_value"], level)}'
         else:
             level += 1
-            result += f'\n{"    " * level}{n["key"]}: '
-            result += f'{stylish(n["value"], level)}'
+            result += f'\n{"    " * level}{node["key"]}: '
+            result += f'{stylish(node["value"], level)}'
             level -= 1
     result += f'\n{"    " * level}{"}"}'
     level -= 1
