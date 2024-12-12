@@ -1,4 +1,3 @@
-
 def stylish(diff, level=0):
     result = ''
     for node in diff:

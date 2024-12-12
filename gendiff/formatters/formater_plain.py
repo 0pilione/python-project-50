@@ -1,3 +1,4 @@
+
 def plain(diff, path=''):
     result = []
     for node in diff:
