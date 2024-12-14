@@ -1,6 +1,3 @@
-from unittest import result
-
-
 def get_stylish(diff, level=0):
     result = []
     for node in diff:
@@ -24,10 +21,10 @@ def get_stylish(diff, level=0):
 
 
 def get_lines(level, string, sign, func):
-        line = ''
-        line += f'{"    " * level + sign}{string["key"]}: '
-        line += f'{func(string["value"], level)}'
-        return line
+    line = ''
+    line += f'{"    " * level + sign}{string["key"]}: '
+    line += f'{func(string["value"], level)}'
+    return line
 
 
 def inner(node, level):

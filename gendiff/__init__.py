@@ -1,3 +1,3 @@
 from gendiff.twofiles import generate_diff
 
-__all__ = (twofiles)
+__all__ = (generate_diff)
