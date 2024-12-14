@@ -1,9 +1,9 @@
 def diff(d1, d2):
     keys1 = set(d1.keys())
     keys2 = set(d2.keys())
-    all_keys = set.union(keys1, keys2)
+    all_keys = keys1 | keys2
     result = []
-    for key in all_keys:
+    for key in sorted(all_keys):
         if key in keys1 and key in keys2:
             if d1[key] == d2[key]:
                 result.append(
