@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = "Вычислитель отличий. Сравнивает плоские и вложенные структуры данных формата json и yaml."
+description = "Difference calculator. Compares flat and nested data structures of json and yaml formats."
 authors = ["Татьяна <deepredoctober@gmail.com>"]
 readme = "README.md"
 packages = [
