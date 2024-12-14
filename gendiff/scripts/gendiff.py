@@ -1,14 +1,10 @@
 from gendiff import generate_diff
-from gendiff.parse_1 import parsearguments
-
-args = parsearguments()
-first = args.first_file
-second = args.second_file
-formater = args.format
+from gendiff.frame import parsearguments
 
 
 def main():
-    print(generate_diff(first, second, formater))
+    args = parsearguments()
+    print(generate_diff(args.first_file, args.second_file, args.format))
 
 
 if __name__ == '__main__':

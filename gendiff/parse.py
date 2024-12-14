@@ -1,10 +1,9 @@
 import json
+import yaml
 import os
 
-import yaml
 
-
-def parserr(path):
+def parse_files(path):
     with open(path) as file:
         read_file = file.read()
         _, split_path = os.path.splitext(path)
@@ -14,4 +13,4 @@ def parserr(path):
         elif split_path == '.json':
             return json.loads(read_file)
         else:
-            return 'uncorrect type of files'
+            raise Exception('wrong type of files!')
