@@ -24,14 +24,14 @@ def get_stylish(diff, level=0):
 
 
 def get_lines(level, string, sign, func):
-        result = ''    
-        result += f'{"    " * level + sign}{string["key"]}: '
-        result += f'{func(string["value"], level)}'
-        return result
+        line = ''
+        line += f'{"    " * level + sign}{string["key"]}: '
+        line += f'{func(string["value"], level)}'
+        return line
 
 
 def inner(node, level):
-    result = ''
+    container = ''
     if isinstance(node, list):
         new_node = get_stylish(node, level + 1)
         return str(new_node)
@@ -39,8 +39,8 @@ def inner(node, level):
         level += 1
         for key, value in node.items():
             new_value = inner(value, level)
-            result += f'\n    {"    " * level}{key}: {new_value}'
-        return '{' + result + '\n' + '    ' * level + '}'
+            container += f'\n    {"    " * level}{key}: {new_value}'
+        return '{' + container + '\n' + '    ' * level + '}'
     if isinstance(node, bool):
         return str(node).lower()
     if node is None:

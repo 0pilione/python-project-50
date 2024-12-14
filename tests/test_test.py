@@ -1,7 +1,5 @@
 import pytest
-
 from gendiff import generate_diff
-
 
 file1 = 'tests/fixtures/nested_file1.yml'
 file2 = 'tests/fixtures/nested_file2.yml'
