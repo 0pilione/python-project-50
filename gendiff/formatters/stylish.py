@@ -20,7 +20,7 @@ def get_stylish(diff, level=0):
     result.append(f'{"    " * level}{"}"}')
     level -= 1
     final_result = '\n'.join(result)
-    return f'{"{"} \n{final_result}'
+    return f'{"{"}\n{final_result}'
 
 
 def get_lines(level, string, sign, func):
