@@ -10,4 +10,3 @@ def generate_diff(dict1, dict2, format_name='stylish'):
     dif = diff(file1, file2)
     formater = select_formater(format_name)
     return formater(dif)
-
