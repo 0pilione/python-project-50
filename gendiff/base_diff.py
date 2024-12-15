@@ -1,4 +1,5 @@
 def diff(d1, d2):
+    '''creates a list of dictionaries with notes on how data in files changed.'''
     keys1 = set(d1.keys())
     keys2 = set(d2.keys())
     all_keys = keys1 | keys2

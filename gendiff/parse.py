@@ -5,6 +5,7 @@ import yaml
 
 
 def parse_files(path):
+    '''prepares files for parsing.'''
     with open(path) as file:
         read_file = file.read()
         _, split_path = os.path.splitext(path)
