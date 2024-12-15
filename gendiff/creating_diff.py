@@ -1,5 +1,5 @@
 from gendiff.base_diff import diff
-from gendiff.formatters import select_formater
+from gendiff.formaters import select_formater
 from gendiff.parse import parse_files
 
 

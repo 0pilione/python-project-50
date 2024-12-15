@@ -1,6 +1,6 @@
-from gendiff.formatters.json import get_json as json
-from gendiff.formatters.plain import get_plain as plain
-from gendiff.formatters.stylish import get_stylish as stylish
+from gendiff.formaters.json import get_json as json
+from gendiff.formaters.plain import get_plain as plain
+from gendiff.formaters.stylish import get_stylish as stylish
 
 
 def select_formater(format_name):
