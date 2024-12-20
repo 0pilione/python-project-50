@@ -12,4 +12,4 @@ def select_formater(format_name):
     elif format_name == 'json':
         return json
     else:
-        raise Exception('wrong format!')
+        raise ValueError('wrong format!')

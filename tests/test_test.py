@@ -1,5 +1,7 @@
 import pytest
 from gendiff import generate_diff
+from gendiff.parse import parse_file
+from gendiff.formaters import select_formater
 
 file1 = 'tests/fixtures/nested_file1.yml'
 file2 = 'tests/fixtures/nested_file2.yml'
@@ -31,12 +33,17 @@ flat_yaml_plain = 'tests/fixtures/flat_json_result.txt'
 def test_generate_diff(filepath1, filepath2, formater, diff):
     '''tests function generate_diff with different files.'''
     result = generate_diff(filepath1, filepath2, formater)
-    for lines in open(diff):
-        list_of_lines = []
-        if lines in diff:
-            merge_lines = list_of_lines.append(lines)
-            expected_result = ' '.join(merge_lines)
-            assert result == expected_result
+    expected_result = open(diff, 'r').read()
+    assert result == expected_result
 
 
+def test_exception_1():
+    with pytest.raises(ValueError) as fail:
+        parse_file('tests/fixtures/file2.txt') 
+        assert str(fail.value) == 'wrong type of file!'
 
+
+def test_exception_2():
+    with pytest.raises(ValueError) as fail:
+        select_formater('py') 
+        assert str(fail.value) == 'wrong format!'

@@ -1,10 +1,10 @@
 from gendiff import generate_diff
-from gendiff.frame import parsearguments
+from gendiff.cli import parse_arguments
 
 
 def main():
     '''generates diff from two files.'''
-    args = parsearguments()
+    args = parse_arguments()
     print(generate_diff(args.first_file, args.second_file, args.format))
 
 
