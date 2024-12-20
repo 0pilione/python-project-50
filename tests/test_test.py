@@ -1,7 +1,7 @@
 import pytest
 from gendiff import generate_diff
-from gendiff.formaters import select_formater
 from gendiff.parse import parse_file
+from gendiff.formaters import select_formater
 
 file1 = 'tests/fixtures/nested_file1.yml'
 file2 = 'tests/fixtures/nested_file2.yml'
@@ -37,13 +37,15 @@ def test_generate_diff(filepath1, filepath2, formater, diff):
     assert result == expected_result
 
 
-def test_exception_1():
+def test_exception_in_parse_file():
+    '''tests function parse_file with wrong file.'''
     with pytest.raises(ValueError) as fail:
         parse_file('tests/fixtures/file2.txt') 
         assert str(fail.value) == 'wrong type of file!'
 
 
-def test_exception_2():
+def test_exception_in_select_formater():
+    '''tests function select_formater with invalid file format.'''
     with pytest.raises(ValueError) as fail:
         select_formater('py') 
         assert str(fail.value) == 'wrong format!'
