@@ -1,7 +1,7 @@
 import pytest
 from gendiff import generate_diff
-from gendiff.parse import parse_file
 from gendiff.formaters import select_formater
+from gendiff.parse import parse_file
 
 file1 = 'tests/fixtures/nested_file1.yml'
 file2 = 'tests/fixtures/nested_file2.yml'
